@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+    app:
+        container_name: reactapp
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - '.:/usr/src/app'
+            - '/usr/src/app/node_modules'
+        ports:
+            - '9080:3000'
+        environment:
+            - NODE_ENV=production

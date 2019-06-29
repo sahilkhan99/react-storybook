@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+    app:
+        container_name: storybook
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            # Create volume
+            - type: volume
+              source: mydata
+              target: /data
+              volume:
+                  nocopy: true
+            # Bind volume
+            - type: bind
+              source: ./
+              target: /app
+
+        ports:
+            - '6006:6006'
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+volumes:
+    mydata:

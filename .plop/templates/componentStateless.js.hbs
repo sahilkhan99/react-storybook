@@ -1,0 +1,51 @@
+import React from 'react';
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components';
+import defaultTheme from '../../theme';
+
+const {{ properCase componentName }}Wrapper = styled.div`
+	padding: 1em;
+	background: #F7F7F7;
+	font-family: 'Source Sans Pro', sans-serif;
+`
+
+
+const {{ properCase componentName }} = (props) => {
+	return (
+		<{{ properCase componentName }}Wrapper
+			className="azap-{{ dashCase componentName }}"
+			{...props}
+		>
+			{props.children}
+		</{{ properCase componentName }}Wrapper>
+	);
+};
+
+
+
+/**
+ * displayName
+ */
+{{ properCase componentName }}.displayName = '{{ properCase componentName }}';
+
+
+
+/**
+ * propTypes
+ */
+{{ properCase componentName }}.propTypes = {
+	theme: PropTypes.object.isRequired
+}
+
+
+
+/**
+ * defaultProps
+ */
+{{ properCase componentName }}.defaultProps = {
+	theme: defaultTheme
+}
+
+
+
+export default {{ properCase componentName }};
